@@ -1,6 +1,4 @@
 # Import required modules and classes
-import shutil
-
 import pandas as pd
 from openpyxl.drawing.image import Image
 from matplotlib import pyplot as plt
