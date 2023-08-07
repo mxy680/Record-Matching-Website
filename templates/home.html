@@ -1,0 +1,33 @@
+<!-- home.html -->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Welcome to Record Match</h1>
+            <p class="lead">
+                This data matching platform offers a powerful solution for users to match their record files with an existing
+                database, providing valuable insights into data quality and accuracy. As a logged-in user, you have full access to
+                our data matching features, empowering you to make informed decisions by efficiently identifying matching records
+                and potential data inconsistencies.
+            </p>
+            {% if authenticated %}
+                <p class="lead">
+                    Explore the capabilities of the platform and make the most out of your data with ease and accuracy. As an
+                    authorized user, you can access our exclusive admin settings, where you have the authority to add or update
+                    databases for enhanced data matching capabilities.
+                </p>
+            {% endif %}
+            <hr class="my-4">
+            <div>
+                <h2 class="display-4">Get Started</h2>
+                <p class="lead">
+                    You're already logged in and ready to begin your data matching journey. Simply upload your record file and select
+                    the relevant database for comparison. Our advanced matching algorithms will swiftly provide you with insightful
+                    results that can drive impactful decisions for your business or research.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

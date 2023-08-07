@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Upload Records{% endblock %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="jumbotron text-center">
+                    <h1 class="display-4">Upload Record File for Matching</h1>
+
+                    <div class="card mt-4 p-4">
+                        <form method="POST" enctype="multipart/form-data" class="text-left">
+                            <div class="form-group">
+                                <label for="record_file">Upload Record File:</label>
+                                <input type="file" name="record_file" id="record_file" required class="form-control-file">
+                            </div>
+                            <div class="form-group">
+                                <label for="database_name">Database Name:</label>
+                                <input type="text" name="database_name" id="database_name" required class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                        {% if download_ready %}
+                            <a href="{{ url_for('auth.download_file', file_path=download_path) }}" class="btn btn-primary mt-3">Download Uploaded File</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Existing Database Files</h2>
+                        <ul class="list-group list-group-flush">
+                            {% for file_name in database_files %}
+                                <li class="list-group-item">{{ file_name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
