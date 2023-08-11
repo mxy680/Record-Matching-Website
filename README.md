@@ -21,8 +21,3 @@ Technologies used:
 
 Deployment:
 The web application can be deployed on any web server that supports Python and Flask. It uses SQLite as the database for simplicity, but it can be easily adapted to other databases. The application can be deployed on a local server or on cloud platforms like Heroku or AWS.
-
-Note:
-Please ensure that you have Python and the required libraries installed before running the application. To set up the virtual environment and install the dependencies, use the requirements.txt file provided.
-
-Feel free to contribute, report issues, or suggest improvements.
